@@ -1,5 +1,5 @@
 interface Category{
-  category: string
+  name: string
 }
 
 export default Category;
