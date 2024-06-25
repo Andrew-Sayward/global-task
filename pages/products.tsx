@@ -1,9 +1,9 @@
+import ProductsListing from "@/components/ProductsListing/ProductsListing"
 import getCategories from "@/helpers/getCategories"
 import getProducts from "@/helpers/getProducts"
 import GeneralLayout from "@/layouts/general-layout"
 import Category from "@/models/Category"
 import Product from "@/models/Product"
-import { get } from "http"
 import { useEffect } from "react"
 
 type Props = {
@@ -22,6 +22,7 @@ const Products = (props: Props) => {
       <div>
         <h1 className="m-2">Products</h1>
       </div>
+      <ProductsListing products={props.products} />
     </GeneralLayout>
   )
 }
