@@ -1,5 +1,6 @@
 import getCategories from "@/helpers/getCategories"
 import getProducts from "@/helpers/getProducts"
+import GeneralLayout from "@/layouts/general-layout"
 import Category from "@/models/Category"
 import Product from "@/models/Product"
 import { get } from "http"
@@ -17,9 +18,11 @@ const Products = (props: Props) => {
   })
 
   return(
-    <div>
-      <h1>Products</h1>
-    </div>
+    <GeneralLayout>
+      <div>
+        <h1>Products</h1>
+      </div>
+    </GeneralLayout>
   )
 }
 

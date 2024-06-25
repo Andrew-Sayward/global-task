@@ -1,15 +1,14 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import GeneralLayout from "@/layouts/general-layout";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-
-    </main>
+    <GeneralLayout>
+      <h1>Home</h1>
+    </GeneralLayout>
   );
 }
 
