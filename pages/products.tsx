@@ -12,16 +12,16 @@ type Props = {
 }
 
 const Products = (props: Props) => {
-  const [isCategory, setIsCategory] = useState("");
+  const [category, setCategory] = useState("");
   const [products, setProducts] = useState(props.products);
 
   useEffect(()=>{
-    if(isCategory){
-      setProducts(props.products.filter(product => product.category === isCategory))
+    if(category){
+      setProducts(props.products.filter(product => product.category === category))
     }else{
       setProducts(props.products)
     }
-  },[isCategory, props.products])
+  },[category, props.products])
   
 
   return(
@@ -30,7 +30,7 @@ const Products = (props: Props) => {
         <h1 className="m-2">Products</h1>
       </div>
      <div className="flex gap-8">
-      <Categories categories={props.categories} setIsCategory={setIsCategory} />
+      <Categories categories={props.categories} setIsCategory={setCategory} />
       <ProductsListing products={products} />
      </div>
     </GeneralLayout>
