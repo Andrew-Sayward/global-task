@@ -1,4 +1,4 @@
-import SearchBar from "@/components/SearchBar";
+import SearchBar from "@/components/SearchBar/SearchBar";
 import { ReactNode } from "react";
 
 const   NewsletterLayout = ({ children }: { children: ReactNode }) =>{

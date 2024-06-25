@@ -20,7 +20,7 @@ const Products = (props: Props) => {
   return(
     <GeneralLayout>
       <div>
-        <h1>Products</h1>
+        <h1 className="m-2">Products</h1>
       </div>
     </GeneralLayout>
   )

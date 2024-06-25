@@ -1,6 +1,6 @@
 // components/SearchBar.js
 import { SetStateAction, useContext } from 'react';
-import { SearchContext } from '../contexts/SearchContext';
+import { SearchContext } from '../../contexts/SearchContext';
 
 const SearchBar = () => {
   const { searchValue, setSearchValue } = useContext(SearchContext);
@@ -11,6 +11,7 @@ const SearchBar = () => {
 
   return (
     <input
+      className='text-black m-2'
       type="text"
       value={searchValue}
       onChange={handleChange}
