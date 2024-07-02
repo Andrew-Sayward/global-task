@@ -39,3 +39,15 @@
   aspect-ratio: 1;
   margin: 16px 80px;
 }
+
+.sort {
+  color: black;
+  margin-bottom: 16px;
+  select {
+    padding: 8px;
+
+    @media (max-width: 1024px) {
+      margin-top: 24px;
+    }
+  }
+}
