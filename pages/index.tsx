@@ -11,9 +11,9 @@ export default function Home() {
   return (
     <GeneralLayout>
     <div className="home-body container">
-      <h1 className="mt-12">Welcome to TrendyLux Store</h1>      
+      <h1 className="mt-12">Welcome to Global Store</h1>      
       <h2>Discover the Future of Shopping</h2>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {HomepageData.map((data)=>{
           return(
             <HomepageCard key={data.title} title={data.title} subtitle={data.subtitle} description={data.description} link={data.link} />
@@ -25,7 +25,7 @@ export default function Home() {
         <li>Premium Quality: We offer only the finest products, ensuring top-notch quality and durability.</li>
         <li>Affordable Prices: Enjoy luxury and style without breaking the bank.</li>
         <li>Customer Satisfaction: Our priority is your happiness. We offer hassle-free returns and excellent customer service.</li>
-        <li>Join our community and experience shopping like never before. TrendyLux Store – where technology, elegance, and fashion meet.</li>
+        <li>Join our community and experience shopping like never before. Global Store – where technology, elegance, and fashion meet.</li>
       </ul>
       <p>Affordable Prices: Enjoy luxury and style without breaking the bank.</p>
       <Link href={"/products"}>Start Shopping Today</Link>

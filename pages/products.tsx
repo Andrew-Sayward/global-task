@@ -29,7 +29,7 @@ const Products = (props: Props) => {
       <div className="container">
         <h1 className="my-4">Products</h1>
       </div>
-     <div className="flex gap-8 container">
+     <div className="lg:flex gap-8 container">
       <Categories categories={props.categories} setIsCategory={setCategory} />
       <ProductsListing products={products} />
      </div>

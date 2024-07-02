@@ -1,3 +1,5 @@
+import styles from "./categories.module.scss";
+
 type Props = {
   categories: string[];
   setIsCategory:Function;
@@ -6,8 +8,8 @@ type Props = {
 const Categories = (props:Props) => {
   return (
     <div>
-      <ul className="bg-white text-black p-4" style={{ width: "360px" }}>
-      <li onClick={()=>{props.setIsCategory("")}}><span>All</span></li>
+      <ul className={styles.categories} style={{ width: "360px" }}>
+      <li onClick={()=>{props.setIsCategory("")}}><span>All Categories</span></li>
         {props.categories.map((category, index) => {
           console.log(category); // Debugging line
           return (
