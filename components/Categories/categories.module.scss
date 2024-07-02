@@ -1,0 +1,17 @@
+.categories {
+  background-color: white;
+  color: black;
+  padding: 24px;
+
+  li {
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: bold;
+    transition: all 0.4s ease;
+    cursor: pointer;
+
+    &:hover {
+      padding-left: 8px;
+    }
+  }
+}
