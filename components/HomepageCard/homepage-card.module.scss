@@ -1,0 +1,17 @@
+.homepageCard {
+  padding: 24px;
+  background-color: white;
+  color: black;
+  
+  a {
+    background-color: black;
+    color: white;
+    transition: all 0.4s ease;
+    border: 1px solid black;
+
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
+}

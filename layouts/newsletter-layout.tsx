@@ -4,8 +4,10 @@ import { ReactNode } from "react";
 const   NewsletterLayout = ({ children }: { children: ReactNode }) =>{
   return(
     <>
-      <SearchBar />
-      {children}
+      <div className="py-4">
+        <SearchBar />
+        {children}
+      </div>
     </>
   )
 }

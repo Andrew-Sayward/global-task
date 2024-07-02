@@ -26,10 +26,10 @@ const Products = (props: Props) => {
 
   return(
     <GeneralLayout>
-      <div>
-        <h1 className="m-2">Products</h1>
+      <div className="container">
+        <h1 className="my-4">Products</h1>
       </div>
-     <div className="flex gap-8">
+     <div className="flex gap-8 container">
       <Categories categories={props.categories} setIsCategory={setCategory} />
       <ProductsListing products={products} />
      </div>

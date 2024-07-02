@@ -6,7 +6,7 @@ type Props = {
 const Categories = (props:Props) => {
   return (
     <div>
-      <ul className="bg-white text-black p-4 m-2" style={{ width: "360px" }}>
+      <ul className="bg-white text-black p-4" style={{ width: "360px" }}>
       <li onClick={()=>{props.setIsCategory("")}}><span>All</span></li>
         {props.categories.map((category, index) => {
           console.log(category); // Debugging line

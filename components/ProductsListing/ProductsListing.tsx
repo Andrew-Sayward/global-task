@@ -7,10 +7,10 @@ type Props = {
 
 const ProductsListing = (props:Props) => {
   return (
-    <div className="grid grid-cols-3">
+    <div className="grid grid-cols-3 gap-4">
       {props.products.map(product => {
         return (
-          <div key={product.id} className="bg-white text-black p-4 m-2">
+          <div key={product.id} className="bg-white text-black p-4">
             <span>{"£" + product.price}</span>
             <h1>{product.title}</h1>
             <div className="relative aspect-square mx-24 my-12">
