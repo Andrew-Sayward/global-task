@@ -1,10 +1,10 @@
-@import "@/styles/mixins";
+@import '@/styles/mixins';
 
 .homepageCard {
   padding: 24px;
   background-color: white;
   color: black;
-  
+
   a {
     @include linkStyles;
   }

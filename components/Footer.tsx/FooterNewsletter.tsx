@@ -1,5 +1,5 @@
-import Link from "next/link";
-import styles from "./footer.module.scss"; 
+import Link from 'next/link';
+import styles from './footer.module.scss';
 
 const FooterNewsletter = () => {
   return (
@@ -24,6 +24,6 @@ const FooterNewsletter = () => {
       </div>
     </footer>
   );
-}
+};
 
 export default FooterNewsletter;

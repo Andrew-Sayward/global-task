@@ -1,9 +1,10 @@
-import Link from "next/link";
+import Link from 'next/link';
+import styles from './navbar.module.scss';
 
 const NavBar = () => {
-  return(
-    <nav className="flex gap-8 text-white container">
-      <ul className="flex gap-4 py-4">
+  return (
+    <nav className={`container ${styles.navbar}`}>
+      <ul>
         <li>
           <Link href="/">Home</Link>
         </li>
@@ -15,7 +16,7 @@ const NavBar = () => {
         </li>
       </ul>
     </nav>
-  )
-} 
+  );
+};
 
 export default NavBar;
