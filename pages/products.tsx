@@ -1,28 +1,38 @@
+import Categories from "@/components/Categories/Categories"
 import ProductsListing from "@/components/ProductsListing/ProductsListing"
 import getCategories from "@/helpers/getCategories"
 import getProducts from "@/helpers/getProducts"
 import GeneralLayout from "@/layouts/general-layout"
-import Category from "@/models/Category"
 import Product from "@/models/Product"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 type Props = {
   products: Product[],
-  categories: Category[],
+  categories: string[],
 }
 
 const Products = (props: Props) => {
+  const [category, setCategory] = useState("");
+  const [products, setProducts] = useState(props.products);
 
   useEffect(()=>{
-    console.log(props.products);
-  })
+    if(category){
+      setProducts(props.products.filter(product => product.category === category))
+    }else{
+      setProducts(props.products)
+    }
+  },[category, props.products])
+  
 
   return(
     <GeneralLayout>
-      <div>
-        <h1 className="m-2">Products</h1>
+      <div className="container">
+        <h1 className="my-4">Products</h1>
       </div>
-      <ProductsListing products={props.products} />
+     <div className="flex gap-8 container">
+      <Categories categories={props.categories} setIsCategory={setCategory} />
+      <ProductsListing products={products} />
+     </div>
     </GeneralLayout>
   )
 }

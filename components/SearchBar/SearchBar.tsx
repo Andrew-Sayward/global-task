@@ -10,13 +10,19 @@ const SearchBar = () => {
   };
 
   return (
-    <input
-      className='text-black m-2'
-      type="text"
-      value={searchValue}
-      onChange={handleChange}
-      placeholder="Search..."
-    />
+    <div className='container'>
+      <form action="" className='flex gap-4'>
+      <input
+        className='text-black p-2'
+        type="text"
+        value={searchValue}
+        onChange={handleChange}
+        placeholder="Search..."
+      />
+      <button type="submit">Search</button>
+      </form>
+    </div>
+
   );
 };
 
