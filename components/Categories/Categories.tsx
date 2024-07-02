@@ -17,7 +17,6 @@ const Categories = (props: Props) => {
           <span>All Categories</span>
         </li>
         {props.categories.map((category, index) => {
-          console.log(category); // Debugging line
           return (
             <li
               key={index}

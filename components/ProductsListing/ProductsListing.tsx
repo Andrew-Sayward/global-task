@@ -6,25 +6,12 @@ import Link from 'next/link';
 
 type Props = {
   products: Product[];
+  setSortValue: Function;
 };
 
-const ProductsListing = ({ products }: Props) => {
-  const [sortedProducts, setSortedProducts] = useState(products);
-
+const ProductsListing = ({ products, setSortValue }: Props) => {
   const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const order = e.target.value;
-
-    const sorted = [...products].sort((a, b) => {
-      if (order === 'ascending') {
-        //We compare the values being sorted by subtracting them from each other and comparing the negative and positive values
-        return a.id - b.id;
-      } else if (order === 'descending') {
-        return b.id - a.id;
-      }
-      return 0;
-    });
-
-    setSortedProducts(sorted);
+    setSortValue(e.target.value);
   };
 
   return (
@@ -39,7 +26,7 @@ const ProductsListing = ({ products }: Props) => {
         </select>
       </div>
       <div className={styles.productListingContainer}>
-        {sortedProducts.map((product) => {
+        {products.map((product) => {
           return (
             <div key={product.id} className={styles.productListing}>
               <span>{'£' + product.price}</span>

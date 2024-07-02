@@ -3,5 +3,15 @@
     display: flex;
     gap: 16px;
     padding: 16px 0;
+
+    li {
+      transition: all 0.4s ease;
+      &:hover {
+        padding: 0 4px;
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
   }
 }

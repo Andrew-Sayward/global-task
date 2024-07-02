@@ -14,6 +14,7 @@ type Props = {
 const Products = (props: Props) => {
   const [category, setCategory] = useState('');
   const [products, setProducts] = useState(props.products);
+  const [sortValue, setSortValue] = useState();
 
   useEffect(() => {
     // This useEffect rerenders our page based off of the value of categories, which then updates the state of the products listing
@@ -26,17 +27,27 @@ const Products = (props: Props) => {
     }
   }, [category, props.products]);
 
+  useEffect(() => {
+    console.log(sortValue)
+    // Sort products based on the selected sort order
+    if (sortValue === 'ascending') {
+      setProducts(products.sort((a, b) => a.id - b.id));
+    } else if (sortValue === 'descending') {
+      setProducts(products.sort((a, b) => b.id - a.id));
+    }
+  }, [products, sortValue]);
+
   return (
     <GeneralLayout>
       <div className="container">
         <h1 className="my-4">Products</h1>
       </div>
       <div className="lg:flex gap-8 container">
-       {/* Here we are passing the function for setting category down into the category component, this allows us to use the value of
+        {/* Here we are passing the function for setting category down into the category component, this allows us to use the value of
            Category when filtering the products.
        */}
         <Categories categories={props.categories} setIsCategory={setCategory} />
-        <ProductsListing products={products} />
+        <ProductsListing products={products} setSortValue={setSortValue} />
       </div>
     </GeneralLayout>
   );
@@ -46,7 +57,7 @@ export default Products;
 
 export const getServerSideProps = async () => {
   const [products, categories] = await Promise.all([
-    //We call two functions to get the properties of the products and categories and pass these to two different states    
+    //We call two functions to get the properties of the products and categories and pass these to two different states
     getProducts(),
     getCategories(),
   ]);

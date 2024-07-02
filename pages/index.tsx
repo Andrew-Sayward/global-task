@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
-    //Here we define the layout and contain the Homepage within it, in later version of Next we will be able to simly use a Layout file    
+    //Here we define the layout and contain the Homepage within it, in later version of Next we will be able to simly use a Layout file
     <GeneralLayout>
       <div className="home-body container">
         <h1 className="mt-12">Welcome to Global Store</h1>
