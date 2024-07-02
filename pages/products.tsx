@@ -29,7 +29,7 @@ const Products = (props: Props) => {
 
   useEffect(() => {
     console.log(sortValue)
-    // Sort products based on the selected sort order
+    // Sort products based on the selected sort order, this is done by subtracting id values and comparing wether they are negative or positive
     if (sortValue === 'ascending') {
       setProducts(products.sort((a, b) => a.id - b.id));
     } else if (sortValue === 'descending') {

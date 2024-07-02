@@ -8,6 +8,7 @@ import HomepageData from '@/Data/HomepageData';
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
+  console.log(HomepageData)
   return (
     //Here we define the layout and contain the Homepage within it, in later version of Next we will be able to simly use a Layout file
     <GeneralLayout>
@@ -15,10 +16,10 @@ export default function Home() {
         <h1 className="mt-12">Welcome to Global Store</h1>
         <h2>Discover the Future of Shopping</h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          {HomepageData.map((data) => {
+          {HomepageData.map((data, index) => {
             return (
               <HomepageCard
-                key={data.title}
+                key={index}
                 title={data.title}
                 subtitle={data.subtitle}
                 description={data.description}
