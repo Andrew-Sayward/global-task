@@ -3,6 +3,7 @@ import { SetStateAction, useContext } from 'react';
 import { SearchContext } from '../../contexts/SearchContext';
 
 const SearchBar = () => {
+  //Here we use the SearchContext to provide and manipulate the state of the search value
   const { searchValue, setSearchValue } = useContext(SearchContext);
 
   const handleChange = (e: { target: { value: SetStateAction<string> } }) => {

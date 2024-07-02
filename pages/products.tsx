@@ -16,6 +16,7 @@ const Products = (props: Props) => {
   const [products, setProducts] = useState(props.products);
 
   useEffect(() => {
+    // This useEffect rerenders our page based off of the value of categories, which then updates the state of the products listing
     if (category) {
       setProducts(
         props.products.filter((product) => product.category === category)
@@ -31,6 +32,9 @@ const Products = (props: Props) => {
         <h1 className="my-4">Products</h1>
       </div>
       <div className="lg:flex gap-8 container">
+       {/* Here we are passing the function for setting category down into the category component, this allows us to use the value of
+           Category when filtering the products.
+       */}
         <Categories categories={props.categories} setIsCategory={setCategory} />
         <ProductsListing products={products} />
       </div>
@@ -42,6 +46,7 @@ export default Products;
 
 export const getServerSideProps = async () => {
   const [products, categories] = await Promise.all([
+    //We call two functions to get the properties of the products and categories and pass these to two different states    
     getProducts(),
     getCategories(),
   ]);
