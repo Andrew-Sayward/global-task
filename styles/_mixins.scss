@@ -1,0 +1,12 @@
+@mixin linkStyles {
+  background-color: black;
+  color: white;
+  transition: all 0.4s ease;
+  border: 1px solid black;
+  padding: 8px 16px;
+
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+}

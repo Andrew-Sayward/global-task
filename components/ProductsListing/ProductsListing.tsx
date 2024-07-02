@@ -1,5 +1,7 @@
 import Product from "@/models/Product";
 import Image from "next/image";
+import styles from "./products-listing.module.scss";
+import Link from "next/link";
 
 type Props = {
   products: Product[]
@@ -10,13 +12,16 @@ const ProductsListing = (props:Props) => {
     <div className="grid grid-cols-3 gap-4">
       {props.products.map(product => {
         return (
-          <div key={product.id} className="bg-white text-black p-4">
+          <div key={product.id} className={styles.productListing}>
             <span>{"£" + product.price}</span>
-            <h1>{product.title}</h1>
-            <div className="relative aspect-square mx-24 my-12">
+            <h3>{product.title}</h3>
+            <div className={styles.image}>
               <Image src={product.image} alt={product.title} fill />  
             </div>
             <p>{product.description}</p>
+            <div className={styles.link}>
+              <Link href="">Buy Now</Link>
+            </div>
           </div>
         )
       })}

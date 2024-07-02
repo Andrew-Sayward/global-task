@@ -1,0 +1,27 @@
+@import "@/styles/mixins";
+
+.productListing {
+ background-color: white;
+ color: black; 
+ padding: 40px 24px;
+ display: flex;
+ flex-direction: column;
+  height: 100%;
+.link {
+  margin-top: 24px;
+  flex-grow: 1;
+  display: flex;
+  align-items: end;
+
+  a {
+    @include linkStyles;
+  }
+}
+
+}
+
+.image {
+  position:relative;
+  aspect-ratio: 1;
+  margin: 16px 80px;
+ }

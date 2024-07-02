@@ -11,7 +11,7 @@ const SearchBar = () => {
 
   return (
     <div className='container'>
-      <form action="" className='flex gap-4'>
+      <form action="" className='flex gap-3'>
       <input
         className='text-black p-2'
         type="text"
